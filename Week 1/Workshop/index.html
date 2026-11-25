@@ -7,127 +7,164 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-	<header>
-		<h1>Study Platform</h1>
-		<p>Your one-stop platform for learning resources</p>
-	</header>
+<body id="top">
 
-	<nav>
-		<ul>
-			<li><a href="#index">Home</a></li>
-			<li><a href="#about">About Us</a></li>
-			<li><a href="#courses">Courses</a></li>
-			<li><a href="#tutorials">Tutorial</a></li>
-			<li><a href="#media">Media</a></li>
-			<li><a href="#announcements">Announcements</a></li>
-		</ul>
-	</nav>
+  <header>
+    <div class="header-inner">
+
+      <div class="brand">
+        <h1>StudyHub</h1>
+        <p>Your one-stop platform for learning resources</p>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#tutorials">Tutorials</a></li>
+          <li><a href="#media">Media</a></li>
+          <li><a href="#announcements">Announcements</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
 	<div class="page-layout">
 		<main>
 
-			<section id="courses">
-				<h2>Featured Courses</h2>
-				<p>Pick a course to start building your skills with. Every course includes notes, exercises and a final project.</p>
+		  <!-- COURSES: a group of cards, each card is a self-contained article -->
+		  <section id="courses">
+		    <h2>Featured Courses</h2>
+		    <p>Pick a course to start building your skills. Every course includes notes, exercises, and a final project.</p>
 
-				<div class="card-grid">
-					
-					<article class="card">
-						<h3>Web Development Basics</h3>
-						<p>Learn how HTML, CSS, and JS work together to build modern websites.</p>
-						<ul>
-							<li>8 modules</li>
-							<li>Beginner friendly</li>
-							<li>Includes a final project</li>
-						</ul>
-						<a href="#" target="_blank">Start learning</a>
-					</article>
+		    <div class="card-grid">
 
-					<article class="card">
-						<h3>Algorithms and Data Structures</h3>
-						<p>Understand arrays, trees, and graphs, and learn how to analyse the efficiency of your code.</p>
-						<ul>
-							<li>10 modules</li>
-							<li>Intermediate</li>
-							<li>Daily problem sets</li>
-						</ul>
-						<a href="#" target="_blank">Start learning</a>
-					</article>
+		      <article class="card">
+		        <img src="images/web-dev.png" alt="Laptop screen showing HTML and CSS code in an editor">
+		        <h3>Web Development Basics</h3>
+		        <p>Learn how HTML, CSS, and JavaScript work together to build modern websites.</p>
+		        <ul>
+		          <li>8 modules</li>
+		          <li>Beginner friendly</li>
+		          <li>Includes a final project</li>
+		        </ul>
+		        <a href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank" rel="noopener noreferrer">Start learning</a>
+		      </article>
 
-					<article class="card">
-						<h3>Mathematics for Machine Learning</h3>
-						<p>Build the foundation of mathematics to begin Machine Learning.</p>
-						<ul>
-							<li>10 modules</li>
-							<li>Intermediate</li>
-							<li>Weekly learning goals</li>
-						</ul>
-						<a href="#" target="_blank">Start learning</a>
-					</article>
+		      <article class="card">
+		        <img src="images/algorithms.png" alt="Whiteboard covered in a hand-drawn algorithm flowchart">
+		        <h3>Data Structures and Algorithms</h3>
+		        <p>Understand arrays, trees, and graphs, and learn how to analyse the efficiency of your code.</p>
+		        <ul>
+		          <li>10 modules</li>
+		          <li>Intermediate</li>
+		          <li>Weekly problem sets</li>
+		        </ul>
+		        <a href="https://www.khanacademy.org/computing/computer-science/algorithms" target="_blank" rel="noopener noreferrer">Start learning</a>
+		      </article>
 
-				</div>
-			</section>
+		      <article class="card">
+		        <img src="images/study-skills.png" alt="Students studying together around a library table">
+		        <h3>Study Skills and Time Management</h3>
+		        <p>Build habits that help you plan assignments, avoid last-minute stress, and retain what you learn.</p>
+		        <ul>
+		          <li>5 modules</li>
+		          <li>All levels</li>
+		          <li>Printable planners</li>
+		        </ul>
+		        <a href="https://www.coursera.org/learn/learning-how-to-learn" target="_blank" rel="noopener noreferrer">Start learning</a>
+		      </article>
 
-			<section id="tutorials">
-				<h2>Tutorials</h2>
+		    </div>
+		  </section>
 
-				<article>
-					<h3>Suggested Learnign Path</h3>
-					<p>Not sure where to begin? Follow these steps in order.</p>
-					<ol>
-						<li>Learn HTML structure and semantic elements</li>
-						<li>Style your pages with CSS</li>
-						<li>Make layout responsive with Flexbox and Grid</li>
-						<li>Add Interactivity with Javascript</li>
-						<li>Deploy a project online</li>
-					</ol>
-				</article>
+		  <!-- TUTORIALS: an ordered list (a suggested learning path) + an unordered list of links -->
+		  <section id="tutorials">
+		    <h2>Tutorials</h2>
 
-				<article>
-					<h3>Recommended Resources</h3>
-					<ul>
-				        <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a>: the reference for web technologies</li>
-				        <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp</a>: free interactive coding lessons</li>
-				        <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">CSS-Tricks Flexbox Guide</a>: a visual cheat sheet</li>
-				      </ul>
-				</article>
-			</section>
+		    <article>
+		      <h3>Suggested Learning Path</h3>
+		      <p>Not sure where to begin? Follow these steps in order:</p>
+		      <ol>
+		        <li>Learn HTML structure and semantic elements</li>
+		        <li>Style your pages with CSS</li>
+		        <li>Make layouts responsive with Flexbox and Grid</li>
+		        <li>Add interactivity with JavaScript</li>
+		        <li>Deploy a project online</li>
+		      </ol>
+		    </article>
 
-			<section id="media">
-				<h2>Workshops</h2>
-			</section>
+		    <article>
+		      <h3>Recommended Resources</h3>
+		      <ul>
+		        <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a>: the reference for web technologies</li>
+		        <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp</a>: free interactive coding lessons</li>
+		        <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">CSS-Tricks Flexbox Guide</a>: a visual cheat sheet</li>
+		      </ul>
+		    </article>
+		  </section>
+
+		  <!-- MEDIA: figure + video + audio -->
+		  <section id="media">
+		    <h2>Watch and Listen</h2>
+
+		    <figure>
+		      <img src="images/campus-library.png" alt="Quiet study area with desks and bookshelves">
+		      <figcaption>Figure 1: A good study space helps you stay focused.</figcaption>
+		    </figure>
+
+		    <div class="media-grid">
+		      <article>
+		        <h3>Video: Introduction to Responsive Design</h3>
+		        <video controls preload="metadata" poster="images/video-poster.jpg">
+		          <source src="media/responsive-intro.mp4" type="video/mp4">
+		          Your browser does not support the video tag.
+		        </video>
+		      </article>
+
+		      <article>
+		        <h3>Audio: Study Focus Playlist</h3>
+		        <p>Calm background audio to help you concentrate while you code or revise.</p>
+		        <audio controls>
+		          <source src="media/Lukrembo - Rainy Day.mp3" type="audio/mpeg">
+		          Your browser does not support the audio element.
+		        </audio>
+		      </article>
+		    </div>
+		  </section>
+
 		</main>
 
 		<!-- SIDEBAR: secondary info -->
 		<aside>
-			<section id="announncements">
-				<h2>Announncements</h2>
-				<ul>
-					<li><strong>Week 1:</strong> Welcome to the platform. Workshops are open.</li>
-					<li><strong>Week 4:</strong> First assignment submission deadline.</li>
-					<li><strong>Reminder:</strong> Commit your work to GitHub every week.</li>
-				</ul>
-			</section>
+		  <section id="announcements">
+		    <h2>Announcements</h2>
+		    <ul>
+		      <li><strong>Week 1:</strong> Welcome to the platform. Workshops are open.</li>
+		      <li><strong>Week 4:</strong> First assignment submission deadline.</li>
+		      <li><strong>Reminder:</strong> Commit your work to GitHub every week.</li>
+		    </ul>
+		  </section>
 
-			<section>
-				<h2>Quick Links</h2>
-				<ul>
-					<li><a href="#courses">Browse courses</a></li>
-					<li><a href="#tutorials">Learning path</a></li>
-					<li><a href="#media">Videos and audio</a></li>
-				</ul>
-			</section>
+		  <section>
+		    <h2>Quick Links</h2>
+		    <ul>
+		      <li><a href="#courses">Browse courses</a></li>
+		      <li><a href="#tutorials">Learning path</a></li>
+		      <li><a href="#media">Videos and audio</a></li>
+		    </ul>
+		  </section>
 
-			<section>
-				<h2>Study Tip</h2>
-				<p>Study in 25-minute focused blocks with 5-minute breaks. Short sessions stick better than marathons.</p>
-			</section>
+		  <section>
+		    <h2>Study Tip</h2>
+		    <p>Study in 25-minute focused blocks with 5-minute breaks. Short sessions stick better than marathons.</p>
+		  </section>
 		</aside>
 	</div>
 
 	<footer>
-		<p>&copy; 2026 StudyHub. Built for 5CS045 Week 1 Workshop.</p>
+	  <p>&copy; 2026 StudyHub. Built for 5CS045 Week 1 Workshop.</p>
+	  <p><a href="#top">Back to top &uarr;</a></p>
 	</footer>
 </body>
 </html>

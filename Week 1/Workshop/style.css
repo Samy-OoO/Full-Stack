@@ -1,14 +1,14 @@
 /* ========== 1. VARIABLES AND RESET ========== */
 :root {
-  --primary: #3b5bdb;
-  --primary-dark: #2b44a8;
-  --nav-bg: #1e2a5a;
-  --accent: #12b886;
-  --bg: #f5f7fb;
+  --primary: #2f6f4e;        /* forest green: header, links, buttons */
+  --primary-dark: #1f4d37;   /* darker green: hover states, h3 */
+  --nav-bg: #17352a;         /* very dark green: nav and footer */
+  --accent: #f59f00;         /* amber: h2 underline, footer link */
+  --bg: #f7f4ec;             /* warm cream page background */
   --surface: #ffffff;
-  --text: #1f2937;
-  --muted: #6b7280;
-  --border: #e2e8f0;
+  --text: #26332c;
+  --muted: #64705f;
+  --border: #e4dfd0;
   --radius: 10px;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
@@ -71,49 +71,67 @@ a:focus-visible {                    /* visible outline for keyboard users */
 
 
 /* ========== 3. HEADER ========== */
+/* ========== 3. HEADER + NAVIGATION (one bar, FLEXBOX) ========== */
 header {
-	background: var(--primary);
-	color: #fff;
-	text-align: center;
-	padding: 2.5rem 1rem;
-}
-header p {
-	margin-bottom: 0;
-	opacity: 0.9;
+  background: var(--nav-bg);
+  color: #fff;
+  border-bottom: 3px solid var(--accent);
+  position: sticky;                  /* the whole bar stays at the top */
+  top: 0;
+  z-index: 100;
 }
 
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;    /* title left, nav right */
+  align-items: center;               /* both vertically centred on the same line */
+  flex-wrap: wrap;                   /* nav drops under the title if there's no room */
+  gap: 0.75rem 2rem;
+}
+
+.brand h1 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+.brand p {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+  opacity: 0.85;
+}
 
 
 /*  ========== 4. NAVIGATION (FLEXBOX) ========== */
-nav {
-	background: var(--nav-bg);
-}
-
 nav ul {
-	list-style: none;
-	margin-bottom: 0;
-	padding: 0.75rem, 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-nav a{
-	display: block;
-	color: #fff;
-	text-decoration: none;
-	font-weight: 500;
-	padding: 0.5 rem 1.1rem;
-	border-radius: 6px;
+nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  padding: 0.6rem 1.25rem;           /* bigger links make the nav feel wider */
+  border-radius: 6px;
 }
 nav a:hover {
-	background: var(--primary);
-	color: #fff;
+  background: var(--primary);
+  color: #fff;
 }
+
 
 
 /* ========== 5. SECTIONS AND CARDS (FLEXBOX) ========== */
@@ -123,6 +141,7 @@ main section, aside section {
 	border-radius: var(--radius);
 	padding: 1.5rem;
 	box-shadow: var(--shadow);
+	scroll-margin-top: 5rem;
 }
 main section {
 	margin-bottom: 1.5rem;
@@ -180,3 +199,150 @@ main section {
 	color: #fff;
 }
 
+/* ========== 6. PAGE LAYOUT (CSS GRID) ========== */
+.page-layout {
+  max-width: 1200px;
+  margin: 0 auto;                    /* centres the whole layout */
+  padding: 1.5rem 1rem;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;   /* flexible main + fixed sidebar */
+  gap: 1.5rem;
+  align-items: start;                /* items keep their own height */
+}
+
+/* Sidebar: sticky on desktop, and itself a grid so sections stack with a gap */
+aside {
+  position: sticky;
+  top: 5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* ========== 7. MEDIA SECTION ========== */
+figure {
+  margin-bottom: 1.5rem;
+}
+figure img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* Grid inside the media section: 3 columns, video spans 2 */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.media-grid article {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+.media-grid article:first-child {
+  grid-column: span 2;               /* the video article takes two columns */
+}
+video, audio {
+  width: 100%;
+  border-radius: 8px;
+}
+video {
+  background: #000;
+}
+
+/* ========== 8. FOOTER ========== */
+footer {
+  background: var(--nav-bg);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 1rem;
+}
+footer a {
+  color: var(--accent);
+}
+footer p {
+ 	margin: 0.25rem 0;
+}
+
+/* ========== 9. HOVER EFFECTS ========== */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* ========== 10. RESPONSIVE DESIGN (keep these LAST) ========== */
+
+/* Tablet: 1024px and below */
+@media (max-width: 1024px) {
+  .page-layout {
+    grid-template-columns: 1fr;      /* sidebar drops below the main content */
+  }
+  aside {
+    position: static;                /* sticky makes no sense once it's below */
+    grid-template-columns: repeat(3, 1fr);   /* its 3 sections sit side by side */
+  }
+}
+
+/* Mobile: 640px and below */
+@media (max-width: 640px) {
+  header {
+    padding: 1.75rem 1rem;
+  }
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  nav ul {
+    flex-direction: column;          /* stack the nav links vertically */
+    align-items: stretch;            /* each link spans the full width */
+  }
+  nav a {
+    text-align: center;
+  }
+
+  main section,
+  aside section {
+    padding: 1.1rem;
+  }
+
+  .card {
+    flex-basis: 100%;                /* one card per row */
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;      /* single column */
+  }
+  .media-grid article:first-child {
+    grid-column: auto;               /* reset the span, or it creates a phantom column */
+  }
+
+  aside {
+    grid-template-columns: 1fr;      /* sidebar sections stack again */
+  }
+
+  figure img {
+    height: 200px;
+  }
+
+  nav {
+    position: static;                /* a tall stacked nav shouldn't stick */
+  }
+  main section,
+  aside section {
+    scroll-margin-top: 1rem;         /* no sticky nav, so a smaller buffer */
+  }
+}
